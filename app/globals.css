@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Tipografija: Inter. U produkciji zamijeniti next/font/google importom u
+  app/layout.tsx (ovdje je system-stack fallback da build radi i offline).
+*/
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-paper text-graphite;
+  }
+  ::selection {
+    background: rgba(15, 107, 111, 0.18);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
